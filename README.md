@@ -25,6 +25,7 @@ data 폴더를 새로 생성하여, 해당 위치에 비디오를 넣어주세�
 generator.py의 파일에서 확장자 제외하고, 비디오의 이름으로 label에 맞춰서 수정해주세요.
 main.py에서 mediapipe를 통해 2d keypoints를 생성하고 싶다면, keypoint_dict = extract_landmarks(data_path)의 주석을 풀어주세요.
 추출한 2d keypoints를 npz로 만들고 싶다면, save_as_npz(keypoint_dict, keypoint_npz_path)의 주석을 풀어주세요.
+Train 데이터셋이랑 Test 데이터셋 각각 생성해주세요.
 생성한 .npz 파일이름을 기반으로 --train_dataset train_npz_file_name, --test_dataset test_npz_file_name 으로 인자를 넣어주세요.
 
 ## Model
@@ -39,9 +40,10 @@ checkpoint 폴더안에 모델을 넣어주세요. 폴더가 없다면 새로 �
 
 ```bash
 python demo_img.py
-
+```
 ```bash
 python demo_cam.py
+```
 
 ## Train
 ```bash
